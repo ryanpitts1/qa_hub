@@ -1,0 +1,22 @@
+<% provide(:title, 'Manage Releases') %>
+
+<h1>
+	Manage Releases<br />
+	<% if @archive_status == 'false' %>
+		<%= link_to "View All", { :controller => 'releases', :action => 'index', :archive => true }, class: "btn btn-small archive-toggle" %>
+	<% else %>
+		<%= link_to "Hide Archived", { :controller => 'releases', :action => 'index', :archive => false }, class: "btn btn-small archive-toggle" %>
+	<% end %>
+</h1>
+
+<%= link_to "Add New Release", new_release_path, class: "btn btn-large btn-primary btn-new-release-top" %>
+
+<% if @releases.empty? %>
+	<h2>No releases have been created yet.</h2>
+<% else %>
+	<div class="releases">
+		<%= render 'releases' %>
+		<div class="clearfix"></div>
+	</div>
+	<%= link_to "Add New Release", new_release_path, class: "btn btn-large btn-primary btn-new-release-bottom" %>
+<% end %>

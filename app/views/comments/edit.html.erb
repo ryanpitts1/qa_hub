@@ -1,0 +1,25 @@
+<% provide(:title, 'Edit Comment') %>
+
+<%= tinymce theme_advanced_buttons1: "bold,italic,underline,strikethrough,separator,forecolor,separator,undo,redo", theme_advanced_buttons2: "bullist,numlist,outdent,indent,separator,removeformat,code,fullscreen", theme_advanced_buttons3: "", content_css: "/assets/tinymce.css", valid_elements: "-strong,-em,-u,-p,p[style],-ol,ol[style],-ul,ul[style],-li,li[style],-span,span[style],-div,div[style]", theme_advanced_resizing: true, theme_advanced_resize_horizontal: false %>
+
+<script type="text/javascript">
+	function closeFancybox() {
+		event.preventDefault();
+		parent.$.fancybox.close();
+		$('.edit_comment').submit();
+	}
+</script>
+
+<h1>
+	Edit Comment
+</h1>
+
+<%= form_for(@comment) do |f| %>
+	<%= f.text_area :comment, class: "tinymce" %>
+	<%= f.hidden_field :author, value: current_user.name %>
+	<%= f.hidden_field :modified_by, value: current_user.email %>
+	<div class="fancybox-form-actions">
+		<%= f.submit "Publish", class: "btn btn-large btn-primary", onclick: "closeFancybox();" %>
+	</div>
+<% end %>
+<div class="clearfix"></div>

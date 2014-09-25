@@ -1,0 +1,41 @@
+<%= will_paginate @releases, previous_label: "<", next_label: ">", inner_window: 1, outer_window: 1 %>
+	<section class="data-list">
+		<% @releases.each do |release| %>
+			<article class="data">
+				<% if release.archive == true %>
+					<div class="label label-warning archive-tag">
+						Archived
+					</div>
+				<% end %>
+				<div class="release-headline">
+					<div class="release-title">
+						<%= release.title %>
+					</div>
+					<div class="release-actions">
+						<% if user_signed_in? %>
+							<%= link_to "Update", edit_release_path(release), class: "btn btn-small btn-primary" %>
+							<%= link_to "Delete", release, method: :delete, data: { confirm: "Are you sure you want to delete #{release.title}?" }, class: "btn btn-small" %>
+						<% end %>
+					</div>
+					<div class="release-pages">
+						<%= link_to "Checklist", checklist_path(release.id), class: "btn btn-small btn-primary" %>
+						<%= link_to "Release List", release_items_path(id: release.id), class: "btn btn-small" %>
+					</div>
+				</div>
+				<div class="release-item-details">
+					<div class="left-column">
+						<span class="headings">Primary Contact:</span> <%= (release.contact != '') ? release.contact : 'Unassigned' %><br />
+						<span class="headings">Backup Contact:</span> <%= (release.backup_contact != '') ? release.backup_contact : 'Unassigned' %><br />
+						<span class="headings">Release Date:</span> <%= (release.release_date) ? release.release_date.strftime('%B %e, %Y') : 'Not Specified' %><br />
+						<span class="headings">Code Cutoff Date:</span> <%= (release.code_cutoff_date) ? release.code_cutoff_date.strftime('%B %e, %Y') : 'Not Specified' %>
+					</div>
+					<div class="right-column">
+						<span class="headings">Status:</span> <%= (release.archive == true) ? "archived" : "active" %><br />
+						<span class="headings">Created On:</span> <%= release.created_at.strftime('%B %e, %Y @ %l:%M %P') %><br />
+						<span class="headings">Updated On:</span> <%= release.updated_at.strftime('%B %e, %Y @ %l:%M %P') %>
+					</div>
+				</div>
+			</article>
+		<% end %>
+	</section>
+<%= will_paginate @releases, previous_label: "<", next_label: ">", inner_window: 1, outer_window: 1 %>

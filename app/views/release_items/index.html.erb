@@ -1,0 +1,127 @@
+<% provide(:title, "Release Items for: #{@release.title}") %>
+
+<a name="top"></a>
+<% if @release.archive == true %>
+	<div class="label label-warning archive-tag">
+		Archived
+	</div>
+<% end %>
+<h1>
+	Release Items for: <%= @release.title %><br />
+	<%= link_to "View the Checklist for this Release", checklist_path(@release.id), class: "btn btn-small" %>
+</h1>
+
+<div class="release-details">
+	<div class="left-column">
+		<span class="headings">Primary Contact:</span> <%= (@release.contact != '') ? @release.contact : 'Unassigned' %><br />
+		<span class="headings">Backup Contact:</span> <%= (@release.backup_contact != '') ? @release.backup_contact : 'Unassigned' %><br />
+		<span class="headings">Risk Level:</span> <%= convert_risk_level_to_words(@release_items_levels_averages.risk_level_average) %><br />
+		<span class="headings">Comfort Level:</span> <%= convert_comfort_level_to_words(@release_items_levels_averages.comfort_level_average) %><br />
+		<span class="headings">Release Date:</span> <%= (@release.release_date) ? @release.release_date.strftime('%B %e, %Y') : 'Not Specified' %><br />
+		<span class="headings">Code Cutoff Date:</span> <%= (@release.code_cutoff_date) ? @release.code_cutoff_date.strftime('%B %e, %Y') : 'Not Specified' %>
+	</div>
+	<div class="right-column">
+		<span class="headings">Total Items in this Release:</span> <%= @release_items.count unless @release_items.nil? %><br />
+		<span class="headings">Breakdown:</span> (Data: <%= @items_data.count unless @items_data.nil? %>, General: <%= @items_general.count unless @items_general.nil? %>, Patches: <%= @items_patch.count unless @items_patch.nil? %>, Projects: <%= @items_project.count unless @items_project.nil? %>, Upgrades: <%= @items_upgrade.count unless @items_upgrade.nil? %>)
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="release-add-new-jump-to">
+	<% if user_signed_in? %>
+		<%= link_to "Add New Release Item", new_release_item_path(id: params[:id]), class: "btn btn-large btn-primary btn-new-release-item" %>
+	<% end %>
+	<div class="jump-to-item">
+		<strong>Go Directly To:</strong> <%= link_to "General Items", "#GeneralItems" %> &nbsp;|&nbsp; <%= link_to "Project Items", "#ProjectItems" %> &nbsp;|&nbsp; <%= link_to "Upgrade Items", "#UpgradeItems" %> &nbsp;|&nbsp; <%= link_to "Data Items", "#DataItems" %> &nbsp;|&nbsp; <%= link_to "Patch Items", "#PatchItems" %>
+	</div>
+</div>
+
+<a name="GeneralItems"></a>
+<div class="release-items">
+	<h3>
+		General Items
+	</h3>
+	<span class="back-to-top">[<a href="#top">back to top</a>]</span>
+	<section class="data-list">
+		<% if @items_general.empty? %>
+			<h2>There are no general items in this release.</h2>
+		<% else %>
+			<% @items_general.each do |item| %>
+				<%= render 'release_items', item: item %>
+			<% end %>
+		<% end %>
+	</section>
+	<div class="clearfix"></div>
+</div>
+<a name="ProjectItems"></a>
+<div class="release-items">
+	<h3>
+		Project Items
+	</h3>
+	<span class="back-to-top">[<a href="#top">back to top</a>]</span>
+	<section class="data-list">
+		<% if @items_project.empty? %>
+			<h2>There are no projects in this release.</h2>
+		<% else %>
+			<% @items_project.each do |item| %>
+				<%= render 'release_items', item: item %>
+			<% end %>
+		<% end %>
+	</section>
+	<div class="clearfix"></div>
+</div>
+<a name="UpgradeItems"></a>
+<div class="release-items">
+	<h3>
+		Upgrade Items
+	</h3>
+	<span class="back-to-top">[<a href="#top">back to top</a>]</span>
+	<section class="data-list">
+		<% if @items_upgrade.empty? %>
+			<h2>There are no upgrade items in this release.</h2>
+		<% else %>
+			<% @items_upgrade.each do |item| %>
+				<%= render 'release_items', item: item %>
+			<% end %>
+		<% end %>
+	</section>
+	<div class="clearfix"></div>
+</div>
+<a name="DataItems"></a>
+<div class="release-items">
+	<h3>
+		Data Items
+	</h3>
+	<span class="back-to-top">[<a href="#top">back to top</a>]</span>
+	<section class="data-list">
+		<% if @items_data.empty? %>
+			<h2>There are no data items in this release.</h2>
+		<% else %>
+			<% @items_data.each do |item| %>
+				<%= render 'release_items', item: item %>
+			<% end %>
+		<% end %>
+	</section>
+	<div class="clearfix"></div>
+</div>
+<a name="PatchItems"></a>
+<div class="release-items">
+	<h3>
+		Patch Items
+	</h3>
+	<span class="back-to-top">[<a href="#top">back to top</a>]</span>
+	<section class="data-list">
+		<% if @items_patch.empty? %>
+			<h2>There are no patches in this release.</h2>
+		<% else %>
+			<% @items_patch.each do |item| %>
+				<%= render 'release_items', item: item %>
+			<% end %>
+		<% end %>
+	</section>
+	<div class="clearfix"></div>
+</div>
+
+<% if user_signed_in? %>
+	<%= link_to "Add New Release Item", new_release_item_path(id: params[:id]), class: "btn btn-large btn-primary btn-new-release-item" %>
+<% end %>

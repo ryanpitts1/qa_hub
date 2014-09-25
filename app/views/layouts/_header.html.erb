@@ -1,0 +1,30 @@
+<header class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<%= link_to "QA Hub", root_path, id: "logo" %>
+			<nav>
+				<ul class="nav pull-right">
+					<li class="top-level <%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+					<li class="top-level <%= 'active' if current_page?(releases_path) %>"><%= link_to "Releases", releases_path %></li>
+					<li id="fat-menu" class="dropdown">
+						<% if signed_in? %>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= "#{current_user.name}" %> <b class="caret"></b></a>
+						<% else %>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+						<% end %>
+						<ul class="dropdown-menu">
+							<% if signed_in? %>
+								<li><%= link_to "QA Confluence Page", "http://confluence.clickmotive.com/display/qa/Home", target: "_blank" %></li>
+				                <li class="divider"></li>
+								<li><%= link_to "Profile", edit_user_registration_path %></li>
+				                <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+			    	        <% else %>
+			    	        	<li><%= link_to "Sign In", new_user_session_path %></li>
+			    	        <% end %>
+			            </ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

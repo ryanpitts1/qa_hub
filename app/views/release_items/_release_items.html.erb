@@ -1,0 +1,26 @@
+<article class="data">
+	<div class="item-title">
+		<%= build_source_url(item.source, item.source_reference) if item.source_reference? %><%= (item.is_data_change == true || item.is_config_change == true) ? "<span class='important-item'>#{item.title}</span>".html_safe : item.title %>
+		<div class="item-title-actions">
+			<% if user_signed_in? %>
+				<%= link_to "Update", edit_release_item_path(item), class: "btn btn-small btn-primary" %>
+				<%= link_to "Delete", item, method: :delete, data: { confirm: "Are you sure you want to delete #{item.title}?" }, class: "btn btn-small" %>
+			<% end %>
+		</div>
+		<% if user_signed_in? && current_user.show_timestamps == true %>
+			<%= "<div class='item-timestamp'>(last updated by #{item.name} on #{item.updated_at.strftime('%B %e, %Y @ %l:%M %P')})</div>".html_safe unless item.modified_by.blank? %>
+		<% end %>
+	</div>
+	<div class="item-details">
+		<span class="headings">Risk Level:</span> <%= convert_risk_level_to_words(item.level_of_risk) %><br />
+		<span class="headings">Comfort Level:</span> <%= convert_comfort_level_to_words(item.level_of_comfort) %><br />
+		<span class="headings">Data Change?</span> <%= item.is_data_change? ? "yes" : "no" %><br />
+		<span class="headings">Config Change?</span> <%= item.is_config_change? ? "yes" : "no" %><br />
+		<span class="headings">Affected Product:</span> <%= item.affected_product %><br />
+		<span class="headings">Affected Browser(s):</span> <%= item.affected_browsers %><br />
+		<span class="headings">Affected Design(s):</span> <%= item.affected_designs %><br />
+		<div class="well">
+			<span class="headings">Comments:</span> <%= item.comments %>
+		</div>
+	</div>
+</article>

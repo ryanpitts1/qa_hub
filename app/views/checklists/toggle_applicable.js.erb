@@ -1,0 +1,11 @@
+$("#checklist_item_applicable_<%= @item.id %>").parent().parent().fadeOut(250, function(){
+	if(<%= @item.applicable %> == false){
+		$("label[for='checklist_item_<%= @item.id %>']").addClass("strikethrough").find("input").attr("disabled","disabled");
+		$(this).find("#checklist_item_applicable_<%= @item.id %>").html("<%= toggle_applicable(@item) %>");
+		$(this).fadeIn(250);
+	}else if(<%= @item.applicable %> == true){
+		$("label[for='checklist_item_<%= @item.id %>']").removeClass("strikethrough").find("input").removeAttr("disabled");
+		$(this).find("#checklist_item_applicable_<%= @item.id %>").html("<%= toggle_applicable(@item) %>");
+		$(this).fadeIn(250);
+	}
+});

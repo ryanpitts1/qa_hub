@@ -1,0 +1,45 @@
+<% provide(:title, 'Update Profile') %>
+
+<h1>Update Profile</h1>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+	<%= render 'shared/error_messages', :object => @user %>
+	
+	<h3>General Information</h3>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	
+	<%= f.label :email %>
+	<%= f.email_field :email, disabled: true %>
+	  
+	<div class="show-timestamps-toggle">
+		<%= f.check_box :show_timestamps %> <%= f.label :show_timestamps, "Show timestamps?" %>
+	</div>
+	
+	<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+		Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+	<% end %>
+	
+	<%= f.label :current_password, "Current Password <i>(we need your current password to confirm your changes)</i>".html_safe %>
+	<%= f.password_field :current_password %>
+	
+	<h3 class="create-separation-with-heading">Manage Password</h3>
+	
+	<%= f.label :password, "Password <i>(leave blank if you don't want to change it)</i>".html_safe %>
+	<%= f.password_field :password, :autocomplete => "off" %>
+
+	<%= f.label :password_confirmation, "Confirm Password" %>
+	<%= f.password_field :password_confirmation %>
+	
+	<div class="form-action-buttons">
+		<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+		<div class="btn-cancel">
+			<%= link_to "Cancel", :back, class: "btn btn-large" %>
+		</div>
+	</div
+<% end %>
+<div class="cancel-account">
+	<h3>Cancel Account</h3>
+	Unhappy? <%= link_to "Cancel your account.", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+</div>

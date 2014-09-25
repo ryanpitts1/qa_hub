@@ -1,0 +1,9 @@
+<%= provide(:title, "Update Release: #{@release.title}") %>
+
+<h1>Update Release: <%= @release.title %></h1>
+
+<% if @release.archive == true %>
+	<div class="label label-warning archive-tag">Archived</div>
+<% end %>
+
+<%= render 'form' %>

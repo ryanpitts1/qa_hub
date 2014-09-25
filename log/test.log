@@ -1,0 +1,495 @@
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'qahub_ror_test.users' doesn't exist: SHOW FULL FIELDS FROM `users`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'qahub_ror_test.users' doesn't exist: SHOW FULL FIELDS FROM `users`
+  [1m[35m (1.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (9.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-19 23:55:22', NULL, NULL, 'user1@example.com', '$2a$04$/KMi4bl4Mza9.6WeMV5dnO9TBAwPNSzDMR9rVcI6uMhdKXTl/wNL.', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-19 23:55:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (37.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-19 23:55:22', NULL, NULL, 'user2@example.com', '$2a$04$PmGk2PT4cwXheumwgxpz4OHukMwxjlUjoWfSUdqo4oXzQf/v/l2hK', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-19 23:55:22')
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (32.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:00:48', NULL, NULL, 'user1@example.com', '$2a$04$/2WSo.26DK1A.k.xmvEcVesCjFqUCpnsiNyIgc1PSsrn/hsLYA/hO', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 00:00:48')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (32.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:00:48', NULL, NULL, 'user2@example.com', '$2a$04$RjUGoM/TtYioQeXySAG89eYbSEgYiINf.AF.TZmCXwuLMYQifwQOm', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 00:00:48')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (34.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:07:22', NULL, NULL, 'user1@example.com', '$2a$04$esO73B4bmhIuDaqn8eNgzeVzWhnttgDbqAEqg5YHRBNJRfiBEI5xS', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 00:07:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (47.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:07:22', NULL, NULL, 'user2@example.com', '$2a$04$zNSz2Gqprq1LbCSjwjs2VeF43gB6af6Hz.SaTeJAw4cuMliCnNLAO', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 00:07:22')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (32.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:08:24', NULL, NULL, 'user1@example.com', '$2a$04$OIUXoMfS8cfWdvK26Vp4Wuriaa3/LtrSfv4GHANvwUuy5jACE7Bb6', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 00:08:24')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (54.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:08:24', NULL, NULL, 'user2@example.com', '$2a$04$9LwNkSYUWzUFMycvqvDayOctzvXpbdmK/qBChQF8FzV1u6jWThRem', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 00:08:24')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (31.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:08:44', NULL, NULL, 'user1@example.com', '$2a$04$TF7lSljMYN8z.12NI0mmYuhR/iLbLy6q0zAACJokiRGf6Evxx1eBW', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 00:08:44')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (51.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 00:08:44', NULL, NULL, 'user2@example.com', '$2a$04$0KoF8s8lfU/HCpUjg/77TOCzLw.SrjGi5kDxchBwOV80xOF6o.UIm', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 00:08:44')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (33.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:03:31', NULL, NULL, 'user1@example.com', '$2a$04$lwpw25K070hxK2XBnjy7Be0h/WYSIbGYU0ZsYEpUK7I8.eqOwO6EW', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:03:31')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (114.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:03:31', NULL, NULL, 'user2@example.com', '$2a$04$xGEhUfrLDc2VLu9WciaUc.j.W3MA77x8Eye0kg4xFh1xPh0Z7A1de', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:03:31')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (70.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:04:24', NULL, NULL, 'user1@example.com', '$2a$04$oajpZwbq7V9DNLmzc/mFre8LmarxA5ejsY7jIohjfctEqX/Ow6eOG', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:04:24')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (48.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'user2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:04:24', NULL, NULL, 'user2@example.com', '$2a$04$XXo.Exwn5PLsWta/WMdgheKvqVXI9Da8nSueMvCwsSt6q48I02mGG', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:04:24')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (33.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:30:50', NULL, NULL, 'exampleuser1@example.com', '$2a$04$3Ojv7MZ6bJp/tqu6AD0TDOmuvZSRbBDpF50W3S77/gSJcs9pl683K', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:30:50')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:30:50', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:30:50')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (49.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:30:51', NULL, NULL, 'exampleuser2@example.com', '$2a$04$YvhL5qObQhMPb5YzBtv/hu.u2wwRqqO/SAkpMR11hZnphF8aLIrYG', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:30:51')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (51.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:30:51', NULL, NULL, 'exampleuser3@example.com', '$2a$04$CC36JO6EMqtaKdpXEyjIr.s1slklH3mz/JX9CdYJdDJbvejEAufEi', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:30:51')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (49.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:31:35', NULL, NULL, 'exampleuser1@example.com', '$2a$04$ZvPoeVbggp1ydJwIA2oNLOrRiWgCD6N3YmGszD50.FatL4T3os4I.', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:31:35')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:31:35', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:31:35')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (45.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:31:35', NULL, NULL, 'exampleuser2@example.com', '$2a$04$vzY4VpTZUvDg1Y6gRe9Pg.AvmepI6nXzt6iVAnqG6h4uAo.n4cd0a', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:31:35')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (34.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:31:35', NULL, NULL, 'exampleuser3@example.com', '$2a$04$J7kpClX6CRaf3JxZ8kutie4jXtS.4vj47jINcgcqPoXqelke8iHmm', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:31:35')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (33.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:35:26', NULL, NULL, 'exampleuser1@example.com', '$2a$04$GIN9AYT5Xys1F0RzuPLODeQOPg4WbZKQBWCE4NSdO6R1RADrJWVHm', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:35:26')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:35:26', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:35:26')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:35:26', NULL, NULL, 'exampleuser2@example.com', '$2a$04$mtKxMGLP3ryc4fq0qEPFyORRLiziZRZyGvmRo929fyjvbCHTqVLBi', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:35:26')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (31.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:35:26', NULL, NULL, 'exampleuser3@example.com', '$2a$04$NrEo/5A0qlGIEuMNhBn8d./wRdzH36EVvM4S3yR1D6D/sBAjDLQ.m', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:35:26')
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (31.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:36:39', NULL, NULL, 'exampleuser1@example.com', '$2a$04$0cFS2s7QGB7bQX.3uyEM8Oxi7nVHufhn3r74PyZqHVpSOYh/C0Wy.', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:36:39')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (37.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:36:39', NULL, NULL, 'exampleuser2@example.com', '$2a$04$ZmWYSqlXm5LwliUhsTod3eD9JD92FCsqjrQVnc37/zJf8TgzxafQu', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:36:39')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (32.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:36:39', NULL, NULL, 'exampleuser3@example.com', '$2a$04$F4UVc1pVVdm3SIiuv0iBPuTNu4a3BANpWSIdE68pOA.Q5lfY/c.Nq', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:36:39')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:36:39', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:36:39')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (74.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:39:08', NULL, NULL, 'exampleuser1@example.com', '$2a$04$QKb2V7LoNzM09xQdruC9OeVdhWLjhdJkAWgQPHFoqfmLfRcOubQsW', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:39:08')[0m
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:39:08', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:39:08')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (33.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:39:09', NULL, NULL, 'exampleuser2@example.com', '$2a$04$CsVBgb6feQPa0mVzaihiaufYuBEIzqPIWnHMiHKE/jMF1QIsb9e6u', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:39:09')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:39:09', 'exampleuser@example.com', '2013-01-07', 'Song Title 2', '2013-04-20 03:39:09')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (42.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:39:09', NULL, NULL, 'exampleuser3@example.com', '$2a$04$cRavuWmUEfo8dQosRzrReeL4eCWxx.AAbKSEl9jTyqM9QZZ3pN2Rm', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:39:09')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (31.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:39:09', NULL, NULL, 'exampleuser4@example.com', '$2a$04$058fScgFU39mH0CXUeXMaudMfIXsIrmKlImjJUxhv3Ewwvi9cwJhi', NULL, NULL, 'Example User 4', NULL, NULL, NULL, 0, 0, '2013-04-20 03:39:09')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (42.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (1.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:42:01', NULL, NULL, 'exampleuser1@example.com', '$2a$04$mwipHx6/NbpBVyPGAmJepuJ2jMAERZEMoqNxEEJkPYKMr5bSg/szu', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:42:01')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (41.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:42:01', NULL, NULL, 'exampleuser2@example.com', '$2a$04$tgjlG4UsYsd3Mw3kvkwvdOB59jRKilW6OEFkmgPs9IwTbFbXspx4O', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:42:01')
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (35.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:42:01', NULL, NULL, 'exampleuser3@example.com', '$2a$04$floFIhmDEuyYttFim3W9rOYeRWQsas5sR6YqFdYHTega/cSGJUET.', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:42:01')[0m
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:42:01', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:42:01')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (34.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:42:01', NULL, NULL, 'exampleuser4@example.com', '$2a$04$xT7FZvEnLbgvx5hSz7/.cOb0YDOI1WrpMOZ5OOPe73lWGC9F/Nye2', NULL, NULL, 'Example User 4', NULL, NULL, NULL, 0, 0, '2013-04-20 03:42:01')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:42:01', 'exampleuser@example.com', '2013-01-07', 'Song Title 2', '2013-04-20 03:42:01')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:42:01', NULL, NULL, 'exampleuser5@example.com', '$2a$04$yZgyfTk7CBgUFWwK3.3UtOX1A5TJe5BB0aKgfuCBoQAWodp1S10cO', NULL, NULL, 'Example User 5', NULL, NULL, NULL, 0, 0, '2013-04-20 03:42:01')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:42:01', 'exampleuser@example.com', '2013-01-07', 'Song Title 3', '2013-04-20 03:42:01')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (1.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:46:42', NULL, NULL, 'exampleuser1@example.com', '$2a$04$VSFl5WHh6aj5mVheV1LAfeqcXIKGoc3rs.1fG5Hv.OyVDNkRFokhi', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:46:42')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:46:42', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:46:42')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (33.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:46:42', NULL, NULL, 'exampleuser2@example.com', '$2a$04$AfMzpqnqPEoyXVnubaUlX.cr4PjqxwVD0.czpioFBSB5zjtlC19GO', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:46:42')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:46:42', 'exampleuser@example.com', '2013-01-07', 'Song Title 2', '2013-04-20 03:46:42')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (36.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:46:42', NULL, NULL, 'exampleuser3@example.com', '$2a$04$Y4AttXrGa7WwXcPehcdLMughZpBkRwPReBnsXqtm5wKEKBrD/E0/W', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:46:42')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:46:42', 'exampleuser@example.com', '2013-01-07', 'Song Title 3', '2013-04-20 03:46:42')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (39.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:46:42', NULL, NULL, 'exampleuser4@example.com', '$2a$04$mqL5nV6VxgNm9n/0rmycXO.vwDoutndaWBHFsmVWpWS/oEBY6ED9S', NULL, NULL, 'Example User 4', NULL, NULL, NULL, 0, 0, '2013-04-20 03:46:42')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:46:42', 'exampleuser@example.com', '2013-01-07', 'Song Title 4', '2013-04-20 03:46:42')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (39.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:46:42', NULL, NULL, 'exampleuser5@example.com', '$2a$04$4E6OjhzvWsToqaUqZAkIMOk7/M8V4UECc9Zw21LJrpu1qcTxvjGce', NULL, NULL, 'Example User 5', NULL, NULL, NULL, 0, 0, '2013-04-20 03:46:42')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (30.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser6@example.com' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser6@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:46:42', NULL, NULL, 'exampleuser6@example.com', '$2a$04$evwTiQrHLgYwlAwqeae5guWCwZKnY5mLr/7dNgx62Wi0UeDU2XiZK', NULL, NULL, 'Example User 6', NULL, NULL, NULL, 0, 0, '2013-04-20 03:46:42')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:51:22', NULL, NULL, 'exampleuser1@example.com', '$2a$04$k9poqe.Adc.5ISctH0fU4.r16QZTvYoUqI6c6mCPLM402Lf9T0YLW', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:51:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (49.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:51:22', NULL, NULL, 'exampleuser2@example.com', '$2a$04$bXBiL7K3rJhlWGjvA4zak.uz27EOldYCPMNq2XLv5eT9ea9Y7aQse', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:51:22')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (31.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:51:22', NULL, NULL, 'exampleuser3@example.com', '$2a$04$eM7f36BTEoj6j9l1idZ4Q.Swkv5eArGZlaCnRQAUzHD1xsSL9EUfe', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:51:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:51:22', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:51:22')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (38.0ms)[0m  ROLLBACK
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:51:22', NULL, NULL, 'exampleuser4@example.com', '$2a$04$jm5rkgtAVjHufb8jsKjPfeJUEEECexKeDK1xkFnstcrk733PpoNNC', NULL, NULL, 'Example User 4', NULL, NULL, NULL, 0, 0, '2013-04-20 03:51:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:51:22', 'exampleuser@example.com', '2013-01-07', 'Song Title 2', '2013-04-20 03:51:22')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (40.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:51:22', NULL, NULL, 'exampleuser5@example.com', '$2a$04$iS2t9LfBcunaCcLXkzYgqedfvijlSIA6lEag9l5OKmqHQ778v0ExW', NULL, NULL, 'Example User 5', NULL, NULL, NULL, 0, 0, '2013-04-20 03:51:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:51:22', 'exampleuser@example.com', '2013-01-07', 'Song Title 3', '2013-04-20 03:51:22')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (41.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser6@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser6@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:51:22', NULL, NULL, 'exampleuser6@example.com', '$2a$04$kfAjIHSO6dTU2sPBzS2cUeAQUHVVRrIUfKwCcXe6iU6f2uoxGVJ/m', NULL, NULL, 'Example User 6', NULL, NULL, NULL, 0, 0, '2013-04-20 03:51:22')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (25.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:51:22', 'exampleuser@example.com', '2013-01-07', 'Song Title 4', '2013-04-20 03:51:22')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (39.0ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36mReleaseData Load (0.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36mReleaseData Load (1.0ms)[0m  [1mSELECT `release_data`.* FROM `release_data` WHERE (section LIKE 'tools') ORDER BY priority ASC[0m
+  [1m[35mReleaseData Load (0.0ms)[0m  SELECT `release_data`.* FROM `release_data` WHERE (section NOT LIKE 'tools') ORDER BY section ASC, priority ASC
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser1@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:54:08', NULL, NULL, 'exampleuser1@example.com', '$2a$04$geBJxSbKCwt3F0SJR8pNNOFOMJbNSjzTllbwweDUK7IO8SPAXmmTG', NULL, NULL, 'Example User 1', NULL, NULL, NULL, 0, 0, '2013-04-20 03:54:08')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:54:08', 'exampleuser@example.com', '2013-01-07', 'Song Title 1', '2013-04-20 03:54:08')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (46.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser2@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:54:08', NULL, NULL, 'exampleuser2@example.com', '$2a$04$TDd.GpqoldjX1eKnsyrh..yPty7WmOm8TCJHlfiVH/NOFpSInRHzq', NULL, NULL, 'Example User 2', NULL, NULL, NULL, 0, 0, '2013-04-20 03:54:08')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (43.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser3@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:54:08', NULL, NULL, 'exampleuser3@example.com', '$2a$04$6kvTnZJBQIxXTjtdxSywe.PEyLgKAZWq/JVOxxL6coxCSAoreWsOq', NULL, NULL, 'Example User 3', NULL, NULL, NULL, 0, 0, '2013-04-20 03:54:08')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (30.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser4@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:54:08', NULL, NULL, 'exampleuser4@example.com', '$2a$04$1SpUzNMazbUCwRKORVNdl.so6.gj/BIXUPh3QAVDUN7D0.Qxniicm', NULL, NULL, 'Example User 4', NULL, NULL, NULL, 0, 0, '2013-04-20 03:54:08')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:54:08', 'exampleuser@example.com', '2013-01-07', 'Song Title 2', '2013-04-20 03:54:08')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (78.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser5@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:54:08', NULL, NULL, 'exampleuser5@example.com', '$2a$04$RbxIbOoaDb2UXS7ZKcD/aO0eFDKhYioztm0sWzs/LUH.h4cSu5rBi', NULL, NULL, 'Example User 5', NULL, NULL, NULL, 0, 0, '2013-04-20 03:54:08')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:54:08', 'exampleuser@example.com', '2013-01-07', 'Song Title 3', '2013-04-20 03:54:08')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (91.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser6@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'exampleuser6@example.com' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO `users` (`admin`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `show_timestamps`, `sign_in_count`, `updated_at`) VALUES (1, '2013-04-20 03:54:08', NULL, NULL, 'exampleuser6@example.com', '$2a$04$luAHB1XmSyfDLsalZvUfou4YPE1SkYYv7TKpVDjj59pdAqBbgY4zu', NULL, NULL, 'Example User 6', NULL, NULL, NULL, 0, 0, '2013-04-20 03:54:08')[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (34.0ms)[0m  INSERT INTO `releases` (`archive`, `backup_contact`, `code_cutoff_date`, `contact`, `created_at`, `modified_by`, `release_date`, `title`, `updated_at`) VALUES (0, 'Example User 2', '2013-01-01', 'Example User 1', '2013-04-20 03:54:08', 'exampleuser@example.com', '2013-01-07', 'Song Title 4', '2013-04-20 03:54:08')
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (49.0ms)[0m  ROLLBACK

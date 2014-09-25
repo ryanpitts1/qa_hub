@@ -1,0 +1,21 @@
+// variables to override
+$bodyBackground: #ebebeb;
+$textColor: #41434a;
+$linkColor: #08c;
+$linkColorHover: darken($linkColor, 7%);
+$navbarBackground: $textColor;
+$navbarBackgroundHighlight: $textColor;
+$navbarText: #fff;
+$navbarLinkColor: #fff;
+$navbarLinkColorHover: #08c;
+$navbarLinkBackgroundActive: lighten($navbarBackground, 10%);
+$navbarLinkColorActive: #08c;
+$inputBorder: #bbb;
+
+
+// mixins to override
+@mixin border_radius($radius: 2px) {
+  -moz-border-radius: $radius; 
+  -webkit-border-radius: $radius; 
+  border-radius: $radius;
+}

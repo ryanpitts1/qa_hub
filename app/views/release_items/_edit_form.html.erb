@@ -1,0 +1,189 @@
+<script type="text/javascript">
+	var checked = function checked(){
+		$('input:checked').parent().addClass('checked');
+		$('input:not(:checked)').parent().removeClass('checked');
+	}
+	
+	var checkAll = function checkAll(section){
+		$('label[data-category="' + section + '"]').find('input').each(function(){
+			if($(this).is(':checked') || $(this).attr('checked') == false){
+				$(this).prop('checked', false);
+				checked();
+			} else {
+				$(this).prop('checked', true);
+				checked();
+			}
+		});
+	}
+	
+	$(window).load(function(){
+		$('input[type="checkbox"]').click(function(){
+			checked();
+		});
+		
+		checked();
+	});
+</script>
+<%= form_for(@release_item) do |f| %>
+	<%= render 'shared/error_messages', :object => @release_item %>
+	
+	<%= f.label :item_type, "Type*" %>
+	<%= f.select :item_type, options_for_select(["Data","General","Patch","Project","Upgrade"], selected: @release_item.item_type) %>
+	<%= f.select :item_type, options_for_select(["Data","General","Patch","Project","Upgrade"], selected: @release_item.item_type) %>
+	
+	<%= f.label :source, "Source*" %>
+	<%= f.select :source, options_for_select(["FogBugz","VersionOne","ZenDesk"], selected: @release_item.source) %>
+	
+	<%= f.label :source_reference, "Source Reference" %>
+	<%= f.text_field :source_reference, placeholder: "Enter ID...", class: "input-medium" %>
+	
+	<%= f.label :title, "Title*" %>
+	<%= f.text_field :title, placeholder: "Enter the release item title...", class: "input-xlarge" %>
+	
+	<%= f.label :is_data_change, "Data Change?*" %>
+   	<label class="radio-btn"><%= f.radio_button :is_data_change, true %> yes &nbsp;</label>
+   	<label class="radio-btn"><%= f.radio_button :is_data_change, false %> no</label>
+	
+	<%= f.label :is_config_change, "Config Change?*", class: "config-change" %>
+   	<label class="radio-btn"><%= f.radio_button :is_config_change, true %> yes &nbsp;</label>
+   	<label class="radio-btn"><%= f.radio_button :is_config_change, false %> no</label>
+   	
+   	<div class="release-item-affected-browsers">
+	   	<h3>Affected Browsers?<h3>
+	   	<div class="affected-browsers-list">
+		   	<% for browser in @affected_browsers_data %>
+		   		<label>
+		   			<% if @release_item.affected_browsers.split(", ").collect(&:strip).include? browser.browser %>
+			   			<%= check_box_tag "affected_browsers[]", browser.browser, true %> <%= browser.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_browsers[]", browser.browser %> <%= browser.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+			<div class="clearfix"></div>
+	   	</div>
+   	</div>
+   	<div class="release-item-affected-designs">
+	   	<h3>Affected Designs?</h3>
+	   	<div class="affected-designs-list">
+		   	<div class="affected-designs-list-heading">
+		   		Acura (<span class="check-all" onclick="checkAll('Acura');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_acura %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		Chevrolet (<span class="check-all" onclick="checkAll('Chevrolet');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_chevrolet %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		General (<span class="check-all" onclick="checkAll('General');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_general %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		GSM (<span class="check-all" onclick="checkAll('GSM');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_gsm %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		Ford (<span class="check-all" onclick="checkAll('Ford');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_ford %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		Mazda (<span class="check-all" onclick="checkAll('Mazda');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_mazda %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		Scion (<span class="check-all" onclick="checkAll('Scion');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_scion %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+		   	<div class="affected-designs-list-heading">
+		   		Tools (<span class="check-all" onclick="checkAll('Tools');">check/uncheck all</span>)
+		   	</div>
+		   	<% for design in @designs_tools %>
+		   		<label data-category="<%= design.category %>">
+		   			<% if @release_item.affected_designs.split(", ").collect(&:strip).include? design.design %>
+			   			<%= check_box_tag "affected_designs[]", design.design, true %> <%= design.label %>
+			   		<% else %>
+			   			<%= check_box_tag "affected_designs[]", design.design %> <%= design.label %>
+			   		<% end %>
+			   	</label>
+		   	<% end %>
+			<div class="clearfix"></div>
+	   	</div>
+   	</div>
+	
+	<%= f.label :affected_product, "Affected Product*" %>
+	<%= f.select :affected_product, options_for_select(["N/A","Asset Server","Flex","Fusion Website","Inventory Process","New Relic"], selected: @release_item.affected_product) %>
+	
+	<%= f.label :level_of_risk, "Risk Level*" %>
+	<%= f.select :level_of_risk, [["low",1],["medium",2],["high",3]], { include_blank: '' } %>
+	
+	<%= f.label :level_of_comfort, "Comfort Level*" %>
+	<%= f.select :level_of_comfort, [["high",3],["medium",2],["low",1]], { include_blank: '' } %>
+    
+    <%= f.label :comments, "Comments" %>
+	<%= f.text_field :comments, placeholder: "Enter comments for this item...", class: "input-xlarge" %>
+    
+    <%= f.hidden_field :modified_by, value: current_user.email %>
+	
+	<div class="form-action-buttons">
+		<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+		<div class="btn-cancel">
+			<%= link_to "Cancel", :back, class: "btn btn-large" %>
+		</div>
+	</div>
+<% end %>

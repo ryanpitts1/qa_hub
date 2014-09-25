@@ -1,0 +1,31 @@
+<%= form_for(@release) do |f| %>
+	<%= render 'shared/error_messages', :object => @release %>
+	
+	<%= f.label :title, "Title*" %>
+	<%= f.text_field :title, placeholder: "Enter the release name...", class: "input-xxlarge" %>
+	
+	<%= f.label :contact, "Primary Contact*" %>
+	<%= f.select :contact, options_for_select(@users.each { |user| [ user.name, user.name ] }, selected: @release.contact), { include_blank: 'Unassigned' } %>
+	
+	<%= f.label :backup_contact, "Backup Contact*" %>
+	<%= f.select :backup_contact, options_for_select(@users.each { |user| [ user.name, user.name ] }, selected: @release.backup_contact), { include_blank: 'Unassigned' } %>
+	
+	<%= f.label :release_date, "Release Date*" %>
+	<%= f.text_field :release_date, "data-behaviour" => "datepicker", class: "input-medium" %>
+	
+	<%= f.label :code_cutoff_date, "Code Cutoff Date*" %>
+	<%= f.text_field :code_cutoff_date, "data-behaviour" => "datepicker", class: "input-medium" %>
+	
+	<label class="checkbox">
+    	<%= f.check_box :archive %> Archive?
+    </label>
+    
+    <%= f.hidden_field :modified_by, value: current_user.email %>
+	
+	<div class="form-action-buttons">
+		<%= f.submit "Save", class: "btn btn-large btn-primary" %>
+		<div class="btn-cancel">
+			<%= link_to "Cancel", :back, class: "btn btn-large" %>
+		</div>
+	</div>
+<% end %>
